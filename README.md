@@ -80,7 +80,9 @@ A job can be explicitly closed using the close endpoint. Once a job is `CLOSED`,
 
 The API follows a layered architecture to separate responsibilities and keep the application easier to maintain and test.
 
-![Job Marketplace API Architecture](docs/Job-Marketplace-API-Architecture.png)
+<p align="center">
+  <img src="docs/Job-Marketplace-API-Architecture.png" alt="Job Marketplace API Architecture">
+</p>
 
 ### Layers
 
