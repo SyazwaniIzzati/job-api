@@ -84,7 +84,7 @@ The API follows a layered architecture to separate responsibilities and keep the
 
 ### Layers
 
-* **API Client** — Swagger UI or Postman sends HTTP requests to the API.
+* **API Client** — Swagger UI sends HTTP requests to the API.
 * **Controllers** — Handle HTTP requests and return appropriate HTTP responses.
 * **Services** — Contain the business logic and application rules.
 * **Repositories** — Provide an abstraction for accessing stored data.
