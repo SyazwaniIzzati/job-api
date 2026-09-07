@@ -7,5 +7,4 @@ public interface IJobRepository
     IEnumerable<Job> GetAll();
     Job? GetById(Guid id);
     void Add(Job job);
-    void Update(Job job);
 }

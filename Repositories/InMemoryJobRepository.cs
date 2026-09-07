@@ -21,16 +21,4 @@ public class InMemoryJobRepository : IJobRepository
         _jobs.Add(job);
     }
 
-    public void Update(Job job)
-    {
-        var existingJob = GetById(job.Id);
-
-        if (existingJob != null)
-        {
-            existingJob.Title = job.Title;
-            existingJob.Description = job.Description;
-            existingJob.Location = job.Location;
-            existingJob.Status = job.Status;
-        }
-    }
 }

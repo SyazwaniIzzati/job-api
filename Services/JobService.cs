@@ -44,8 +44,6 @@ public class JobService : IJobService
 
         job.Status = "CLOSED";
 
-        _jobRepository.Update(job);
-
         return true;
 
     }
