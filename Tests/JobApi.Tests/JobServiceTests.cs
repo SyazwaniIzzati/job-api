@@ -9,7 +9,7 @@ public class JobServiceTests
     [Fact]
     public void CreateJob_ShouldSetStatusToOpen()
     {
-        // Arrange
+    
         var repository = new InMemoryJobRepository();
         var service = new JobService(repository);
 
@@ -20,17 +20,17 @@ public class JobServiceTests
             Location = "Kuala Lumpur"
         };
 
-        // Act
+       
         var result = service.CreateJob(job);
 
-        // Assert
+        
         Assert.Equal("OPEN", result.Status);
     }
 
     [Fact]
     public void CloseJob_ShouldSetStatusToClosed()
     {
-        // Arrange
+        
         var repository = new InMemoryJobRepository();
         var service = new JobService(repository);
 
@@ -43,10 +43,10 @@ public class JobServiceTests
 
         var createdJob = service.CreateJob(job);
 
-        // Act
+        
         var result = service.CloseJob(createdJob.Id);
 
-        // Assert
+        
         Assert.True(result);
         Assert.Equal("CLOSED", createdJob.Status);
     }
@@ -54,16 +54,14 @@ public class JobServiceTests
     [Fact]
     public void CloseJob_ShouldReturnFalse_WhenJobDoesNotExist()
     {
-        // Arrange
+        
         var repository = new InMemoryJobRepository();
         var service = new JobService(repository);
 
         var randomJobId = Guid.NewGuid();
 
-        // Act
         var result = service.CloseJob(randomJobId);
 
-        // Assert
         Assert.False(result);
     }
 }

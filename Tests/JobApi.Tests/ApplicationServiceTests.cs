@@ -9,7 +9,7 @@ public class ApplicationServiceTests
     [Fact]
     public void CreateApplication_ShouldSucceed_WhenJobIsOpen()
     {
-        // Arrange
+        
         var jobRepository = new InMemoryJobRepository();
         var applicationRepository = new InMemoryApplicationRepository();
         var service = new ApplicationService(
@@ -31,12 +31,10 @@ public class ApplicationServiceTests
             CandidateEmail = "john@example.com"
         };
 
-        // Act
         var result = service.CreateApplication(
             createdJob.Id,
             application);
 
-        // Assert
         Assert.NotNull(result);
         Assert.Equal(createdJob.Id, result.JobId);
     }
@@ -44,7 +42,6 @@ public class ApplicationServiceTests
     [Fact]
     public void CreateApplication_ShouldFail_WhenJobIsClosed()
     {
-        // Arrange
         var jobRepository = new InMemoryJobRepository();
         var applicationRepository = new InMemoryApplicationRepository();
 
@@ -71,12 +68,10 @@ public class ApplicationServiceTests
             CandidateEmail = "john@example.com"
         };
 
-        // Act
         var result = service.CreateApplication(
             createdJob.Id,
             application);
 
-        // Assert
         Assert.Null(result);
     }
 }
